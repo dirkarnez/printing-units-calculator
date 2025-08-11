@@ -1,5 +1,5 @@
 const TextInputComponent = ({ from, to, formula }) => {
-  const [ inputValue, setInputValue ] = React.useState(0);
+  const [ inputValue, setInputValue ] = React.useState("");
   const [ outputValue, setOutputValue ] = React.useState(0);
 
   React.useEffect(() => {
@@ -14,7 +14,7 @@ const TextInputComponent = ({ from, to, formula }) => {
     <div>
       <input
         type="text" placeholder={from}
-        value={!isNaN(inputValue) ? inputValue : ""}
+        value={inputValue}
         onChange={handleChange}
       />{from}
       <p>{!isNaN(outputValue) ? outputValue : 0 }{to}</p>
@@ -34,7 +34,7 @@ function PrintingUnitsCalculator() {
         printing-units-calculator
       </a>
       <br/>
-      <TextInputComponent from="cm" to="pt" formula={value => Number(value * (72 / 2.54) ).toFixed(2)}/>
+      <TextInputComponent from="cm" to="pt" formula={value => Number(Number(inputValue) * (72 / 2.54) ).toFixed(2)}/>
     </div>
   )
 }
