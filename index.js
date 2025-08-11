@@ -1,6 +1,6 @@
 const TextInputComponent = ({ from, to, formula }) => {
-  const [ inputValue, setInputValue ] = React.useState(NaN);
-  const [ outputValue, setOutputValue ] = React.useState(NaN);
+  const [ inputValue, setInputValue ] = React.useState(0);
+  const [ outputValue, setOutputValue ] = React.useState(0);
 
   React.useEffect(() => {
     setOutputValue(formula(inputValue));
@@ -17,7 +17,7 @@ const TextInputComponent = ({ from, to, formula }) => {
         value={!isNaN(inputValue) ? inputValue : ""}
         onChange={handleChange}
       />{from}
-      <p>{outputValue}{!isNaN(outputValue) && to}</p>
+      <p>{!isNaN(outputValue) ? outputValue : 0 }{to}</p>
     </div>
   );
 };
