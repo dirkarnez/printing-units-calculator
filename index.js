@@ -17,7 +17,7 @@ const TextInputComponent = ({ from, to, formula }) => {
         value={inputValue}
         onChange={handleChange}
       />
-      <p>{outputValue}{isNaN(outputValue) && to}</p>
+      <p>{outputValue}{!isNaN(outputValue) && to}</p>
     </div>
   );
 };
