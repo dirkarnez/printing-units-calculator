@@ -17,7 +17,7 @@ const TextInputComponent = ({ from, to, formula }) => {
         value={inputValue}
         onChange={handleChange}
       />
-      <p>{{outputValue}{to}</p>
+      <p>{outputValue}{to}</p>
     </div>
   );
 };
