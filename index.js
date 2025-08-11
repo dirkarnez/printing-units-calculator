@@ -34,7 +34,7 @@ function PrintingUnitsCalculator() {
         printing-units-calculator
       </a>
       <br/>
-      <TextInputComponent from="cm" to="pt" formula={value => value / 72 / 2.54 }/>
+      <TextInputComponent from="cm" to="pt" formula={value => value * (72 / 2.54) }/>
     </div>
   )
 }
