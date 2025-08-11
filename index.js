@@ -22,8 +22,6 @@ const TextInputComponent = ({ from, to, formula }) => {
   );
 };
 
-export default TextInputComponent;
-
 function PrintingUnitsCalculator() {
   const [ data, setData ] = React.useState({});
 
