@@ -14,9 +14,9 @@ const TextInputComponent = ({ from, to, formula }) => {
     <div>
       <input
         type="text" placeholder={from}
-        value={inputValue}
+        value={!isNaN(inputValue) ? inputValue : ""}
         onChange={handleChange}
-      />
+      />{from}
       <p>{outputValue}{!isNaN(outputValue) && to}</p>
     </div>
   );
