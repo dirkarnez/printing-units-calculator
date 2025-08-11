@@ -1,3 +1,29 @@
+const TextInputComponent = ({ from, to, formula }) => {
+  const [ inputValue, setInputValue ] = useState(NaN);
+  const [ outputValue, setOutputValue ] = useState(NaN);
+
+  React.useEffect(() => {
+    setOutputValue(formula(inputValue));
+  }, [ inputValue ]);
+  
+  const handleChange = (event) => {
+    setInputValue(event.target.value);
+  };
+
+  return (
+    <div>
+      <input
+        type="text" placeholder={from}
+        value={inputValue}
+        onChange={handleChange}
+      />
+      <p>{to}: {outputValue}</p>
+    </div>
+  );
+};
+
+export default TextInputComponent;
+
 function PrintingUnitsCalculator() {
   const [ data, setData ] = React.useState({});
 
@@ -10,7 +36,7 @@ function PrintingUnitsCalculator() {
         printing-units-calculator
       </a>
       <br/>
-
+      <TextInputComponent from="cm" to="pt" formula={value => value / 72 / 2.54 }/>
     </div>
   )
 }
