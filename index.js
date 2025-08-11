@@ -17,7 +17,7 @@ const TextInputComponent = ({ from, to, formula }) => {
         value={inputValue}
         onChange={handleChange}
       />
-      <p>{outputValue}{to}</p>
+      <p>{outputValue}{isNaN(outputValue) && to}</p>
     </div>
   );
 };
@@ -34,7 +34,7 @@ function PrintingUnitsCalculator() {
         printing-units-calculator
       </a>
       <br/>
-      <TextInputComponent from="cm" to="pt" formula={value => value * (72 / 2.54) }/>
+      <TextInputComponent from="cm" to="pt" formula={value => Number(1 * (72 / 2.54) ).toFixed(2)}/>
     </div>
   )
 }
