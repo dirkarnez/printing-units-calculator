@@ -13,7 +13,8 @@ const TextInputComponent = ({ from, to, formula }) => {
   return (
     <div>
       <input
-        type="text" placeholder={from}
+        type="number"
+        placeholder={from}
         value={inputValue}
         onChange={handleChange}
       />{from}
