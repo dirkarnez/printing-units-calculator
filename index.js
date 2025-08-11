@@ -1,7 +1,7 @@
 const TextInputComponent = ({ from, to, formula }) => {
   const [ inputValue, setInputValue ] = React.useState("");
   const [ outputValue, setOutputValue ] = React.useState(0);
-
+  
   React.useEffect(() => {
     setOutputValue(formula(inputValue));
   }, [ inputValue ]);
