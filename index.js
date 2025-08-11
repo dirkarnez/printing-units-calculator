@@ -36,6 +36,7 @@ function PrintingUnitsCalculator() {
       </a>
       <br/>
       <TextInputComponent from="cm" to="pt" formula={value => Number(Number(value) * (72 / 2.54) ).toFixed(2)}/>
+      <p>2.5mm height is the smallest font acceptable for me</p>
     </div>
   )
 }
