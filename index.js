@@ -1,6 +1,6 @@
 const TextInputComponent = ({ from, to, formula }) => {
-  const [ inputValue, setInputValue ] = useState(NaN);
-  const [ outputValue, setOutputValue ] = useState(NaN);
+  const [ inputValue, setInputValue ] = React.useState(NaN);
+  const [ outputValue, setOutputValue ] = React.useState(NaN);
 
   React.useEffect(() => {
     setOutputValue(formula(inputValue));
